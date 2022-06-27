@@ -9,18 +9,34 @@ titleEl.innerText = "Nome utente: ";
 // localStorage.setItem("username", nomeUtente);
 // contentEl.innerText = nomeUtente;
 
-navbarEl.style = `width: 500px; height: 30px; border-style: 1px solid; background-color: pink; `;
+navbarEl.style = `width: 500px; height: 30px; border-style: 1px solid; background-color: pink; padding: 6px 0 0 6px; border-radius: 6px;   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6); font-weight: bold; `;
 navbarEl.style.display = "flex";
 
 titleEl.style = `margin-top: 0px; padding-top: 5px`;
 
 contentEl.style = `margin-top: 0px; padding: 5px 0 0 10px;`;
 
+// try {
+//   if (localStorage.getItem("username") !== nomeUtente) {
+//     localStorage.setItem("username", nomeUtente);
+//     document.body.append(navbarEl);
+//     navbarEl.append(`L'utente ${nomeUtente} è stato appena inserito.`);
+//   } else {
+//     throw new error();
+//   }
+// } catch (error) {
+//   document.body.append(navbarEl);
+//   navbarEl.append(`${nomeUtente}, bentornato/a!`);
+
+//   throw new Error("Nuovo utente: aggiunto.");
+// }
+
 try {
   if (localStorage.getItem("username") !== nomeUtente) {
     localStorage.setItem("username", nomeUtente);
     document.body.append(navbarEl);
     navbarEl.append(`L'utente ${nomeUtente} è stato appena inserito.`);
+    console.error("Primo accesso.");
   } else {
     throw new error();
   }
@@ -28,5 +44,5 @@ try {
   document.body.append(navbarEl);
   navbarEl.append(`${nomeUtente}, bentornato/a!`);
 
-  throw new Error("Nuovo utente: aggiunto.");
+  throw new Error("Utente già registrato.");
 }
