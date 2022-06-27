@@ -1,3 +1,10 @@
+// Sulla base dell'esercitazione del giorno, creare una pagina che mostri una navbar. Questa deve visualizzare:
+
+// Un nome utente, preso da prompt salvi sul localStorage
+// Lo stesso nome sarà visualizzato all'interno di questa navbar come testo
+// Gli elementi HTML utilizzati dovranno essere dichiarati via JavaScript
+// Bisogna fare un controllo (try) sul nome utente stesso, se non presente nel localStorage allora mostri un errore in console, e successivamente aggiunto (catch)
+
 const newEl = (el) => document.createElement(el);
 const nomeUtente = prompt("Inserire nome utente");
 const navbarEl = newEl("nav");
@@ -15,21 +22,6 @@ navbarEl.style.display = "flex";
 titleEl.style = `margin-top: 0px; padding-top: 5px`;
 
 contentEl.style = `margin-top: 0px; padding: 5px 0 0 10px;`;
-
-// try {
-//   if (localStorage.getItem("username") !== nomeUtente) {
-//     localStorage.setItem("username", nomeUtente);
-//     document.body.append(navbarEl);
-//     navbarEl.append(`L'utente ${nomeUtente} è stato appena inserito.`);
-//   } else {
-//     throw new error();
-//   }
-// } catch (error) {
-//   document.body.append(navbarEl);
-//   navbarEl.append(`${nomeUtente}, bentornato/a!`);
-
-//   throw new Error("Nuovo utente: aggiunto.");
-// }
 
 try {
   if (localStorage.getItem("username") !== nomeUtente) {
