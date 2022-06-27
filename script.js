@@ -34,6 +34,7 @@ try {
   }
 } catch (error) {
   document.body.append(navbarEl);
+  navbarEl.style = `width: 500px; height: 30px; border-style: 1px solid; padding: 6px 0 0 6px; border-radius: 6px;   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6); font-weight: bold; background-color: green; `;
   navbarEl.append(`${nomeUtente}, bentornato/a!`);
 
   throw new Error("Utente già registrato.");
